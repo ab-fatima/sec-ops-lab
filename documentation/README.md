@@ -4,7 +4,7 @@ Ce dossier contient la documentation technique du projet SEC-OPS LAB.
 
 ## Fichiers
 
-- `DAT-SEC-OPS-LAB.tex` — Dossier d'Architecture Technique (source LaTeX)
+- `DAT-SEC-OPS-LAB.tex` — Dossier d'Architecture Technique 
 
 ## Contenu du DAT
 
