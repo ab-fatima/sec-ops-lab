@@ -1,0 +1,33 @@
+# Fichiers de rapport (trop volumineux pour Git)
+rapports/initial/*.html
+rapports/initial/*.xml
+rapports/final/*.html
+rapports/final/*.xml
+
+# Fichiers OVAL (se téléchargent automatiquement)
+*.oval.xml
+*.oval.xml.bz2
+
+# Fichiers temporaires
+*.tmp
+*.bak
+*.swp
+*~
+
+# Clés SSH (JAMAIS dans Git)
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+
+# Mots de passe (JAMAIS dans Git)
+vault-password.txt
+secrets.yml
+.vault_pass
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
