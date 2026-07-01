@@ -1,8 +1,8 @@
 # Fichiers de rapport (trop volumineux pour Git)
-rapports/initial/*.html
-rapports/initial/*.xml
-rapports/final/*.html
-rapports/final/*.xml
+#rapports/initial/*.html
+#rapports/initial/*.xml
+#rapports/final/*.html
+#rapports/final/*.xml
 
 # Fichiers OVAL (se téléchargent automatiquement)
 *.oval.xml

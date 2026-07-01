@@ -1,0 +1,1405 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+		Color mapping
+		Result enumeration
+	Class       |t|f|u|e|na|ne|
+	compliance  |G|R|B|Y|- |- |
+	inventory   |-|-|B|Y|- |- |
+	misc        |-|-|B|Y|- |- |
+	patch       |R|G|B|Y|- |- |
+	vuln        |R|G|B|Y|- |- |
+
+	R = red
+	G = green
+	B = blue
+	Y = yellow
+	- = grey
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>OVAL Results</title>
+    <style type="text/css">
+            table { border: 1px solid #000000; width: 100%; border-spacing: 0px; margin: 2px 0px;}
+            .noborder {border: none;}
+            .nomargin {margin: 0px;}
+            td { padding: 0px 4px 1px 4px;}
+            .SmallLabel { font-family: Geneva, Arial, Helvetica, sans-serif; color: #000000; font-size: 9pt; font-weight: bold; white-space: nowrap;}
+            .SmallText { font-family: Geneva, Arial, Helvetica, sans-serif; color: #000000; font-size: 9pt;}
+            .Label { font-family: Geneva, Arial, Helvetica, sans-serif; color: #000000; font-size: 10pt; font-weight: bold; white-space: nowrap;}
+            .TitleLabel { font-family: Geneva, Arial, Helvetica, sans-serif; color: #ffffff; font-size: 10pt; font-weight: bold; white-space: nowrap;}
+            .Text { font-family: Geneva, Arial, Helvetica, sans-serif; color: #000000; font-size: 10pt;}
+            .Title { color: #FFFFFF; background-color: #706c60; padding: 0px 4px 1px 4px; font-size: 10pt; border-bottom: 1px solid #000000;}
+            .Center { text-align: center;}
+
+            a { color:#676c63;}
+            a.Hover:hover { color:#7b0e0e; text-decoration:underline;}
+
+            .LightRow { background-color: #FFFFFF;}
+            .DarkRow { background-color: #DDDDD8;}
+
+            .resultbadA{background-color: #FFBC8F;}
+            .resultbadB{background-color: #FFE0CC;}
+            .resultgoodA{background-color: #ACD685;}
+            .resultgoodB{background-color: #CBE6B3;}
+            .unknownA{background-color: #AEC8E0;}
+            .unknownB{background-color: #DAE6F1;}
+            .errorA{background-color: #FFDD75;}
+            .errorB{background-color: #FFECB3;}
+            .otherA{background-color: #EEEEEE;}
+            .otherB{background-color: #FFFFFF;}
+
+            .Classcompliance{background-color: #93C572;}
+            .Classinventory{background-color: #AEC6CF;}
+            .Classmiscellaneous{background-color: #9966CC;}
+            .Classpatch{background-color: #FFDD75;}
+            .Classvulnerability{background-color: #FF9966;}
+            .ColorBox{width: 2px;}
+		</style>
+  </head>
+  <body>
+    <table class="noborder nomargin">
+      <tr>
+        <td width="50%">
+          <table border="1">
+            <tr class="Title">
+              <td class="TitleLabel" colspan="5">OVAL Results Generator Information</td>
+            </tr>
+            <tr class="DarkRow Center">
+              <td class="SmallLabel">Schema Version</td>
+              <td class="SmallLabel">Product Name</td>
+              <td class="SmallLabel">Product Version</td>
+              <td class="SmallLabel">Date</td>
+              <td class="SmallLabel">Time</td>
+            </tr>
+            <tr class="LightRow">
+              <td class="SmallText">5.11.1</td>
+              <td class="SmallText">cpe:/a:open-scap:oscap</td>
+              <td class="SmallText">1.4.3</td>
+              <td class="SmallText">2026-06-22</td>
+              <td class="SmallText">08:57:12</td>
+            </tr>
+            <tr class="DarkRow Center">
+              <td class="SmallLabel" style="width: 20%;" title="Non-Compliant/Vulnerable/Unpatched">#✕</td>
+              <td class="SmallLabel" style="width: 20%;" title="Compliant/Non-Vulnerable/Patched">#✓</td>
+              <td class="SmallLabel" style="width: 20%;" title="Error">#Error</td>
+              <td class="SmallLabel" style="width: 20%;" title="Unknown">#Unknown</td>
+              <td class="SmallLabel" style="width: 20%;" title="Inventory/Miscellaneous class, or Not Applicable/Not Evaluated result">#Other</td>
+            </tr>
+            <tr class="LightRow Center" style="height:auto;">
+              <td class="SmallText resultbadB" title="Non-Compliant/Vulnerable/Unpatched" style="width:20%">2</td>
+              <td class="SmallText resultgoodB" title="Compliant/Non-Vulnerable/Patched" style="width:20%">146</td>
+              <td class="SmallText errorB" title="Error" style="width:20%">0</td>
+              <td class="SmallText unknownB" title="Unknown" style="width:20%">0</td>
+              <td class="SmallText otherB" title="Inventory/Miscellaneous class, or Not Applicable/Not Evaluated result" style="width:20%">1</td>
+            </tr>
+          </table>
+        </td>
+        <td width="50%">
+          <table border="1">
+            <tr class="Title">
+              <td class="TitleLabel" colspan="5">OVAL Definition Generator Information</td>
+            </tr>
+            <tr class="DarkRow Center">
+              <td class="SmallLabel">Schema Version</td>
+              <td class="SmallLabel">Product Name</td>
+              <td class="SmallLabel">Product Version</td>
+              <td class="SmallLabel">Date</td>
+              <td class="SmallLabel">Time</td>
+            </tr>
+            <tr class="LightRow">
+              <td class="SmallText">5.11.1</td>
+              <td class="SmallText">Canonical USN OVAL Generator</td>
+              <td class="SmallText">1</td>
+              <td class="SmallText">2026-06-19</td>
+              <td class="SmallText">08:46:08</td>
+            </tr>
+            <tr class="DarkRow Center">
+              <td class="SmallLabel" style="width: 20%;">#Definitions</td>
+              <td class="SmallLabel" style="width: 20%;">#Tests</td>
+              <td class="SmallLabel" style="width: 20%;">#Objects</td>
+              <td class="SmallLabel" style="width: 20%;">#States</td>
+              <td class="SmallLabel" style="width: 20%;">#Variables</td>
+            </tr>
+            <tr class="LightRow Center">
+              <td class="SmallText Center">149 Total<br /><table class="noborder"><tr class="Center"><td class="SmallText Classcompliance" title="compliance" style="width:20%">0</td><td class="SmallText Classinventory" title="inventory" style="width:20%">1</td><td class="SmallText Classmiscellaneous" title="miscellaneous" style="width:20%">0</td><td class="SmallText Classpatch" title="patch" style="width:20%">148</td><td class="SmallText Classvulnerability" title="vulnerability" style="width:20%">0</td></tr></table></td>
+              <td class="SmallText Center">180</td>
+              <td class="SmallText Center">180</td>
+              <td class="SmallText Center">180</td>
+              <td class="SmallText Center">171</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <hr />
+    <a class="Hover" name="a_1" id="a_1" style="text-decoration:none;"></a>
+    <table border="1">
+      <tr class="Title">
+        <td class="TitleLabel" colspan="2">System Information</td>
+      </tr>
+      <tr class="DarkRow">
+        <td class="Label" width="20%">Host Name</td>
+        <td class="Text" width="80%">ubunto1</td>
+      </tr>
+      <tr class="LightRow">
+        <td class="Label" width="20%">Operating System</td>
+        <td class="Text" width="80%">Ubuntu</td>
+      </tr>
+      <tr class="DarkRow">
+        <td class="Label" width="20%">Operating System Version</td>
+        <td class="Text" width="80%">24.04 (Resolute Raccoon)</td>
+      </tr>
+      <tr class="LightRow">
+        <td class="Label" width="20%">Architecture</td>
+        <td class="Text" width="80%">x86_64</td>
+      </tr>
+      <tr class="DarkRow">
+        <td class="Label" width="20%">Interfaces</td>
+        <td width="80%">
+          <table border="1">
+            <tr class="LightRow">
+              <td class="Label" width="20%">Interface Name</td>
+              <td class="Text" width="80%">lo</td>
+            </tr>
+            <tr class="LightRow">
+              <td class="Label" width="20%">IP Address</td>
+              <td class="Text" width="80%">127.0.0.1</td>
+            </tr>
+            <tr class="LightRow">
+              <td class="Label" width="20%">MAC Address</td>
+              <td class="Text" width="80%">00:00:00:00:00:00</td>
+            </tr>
+          </table>
+          <table border="1">
+            <tr class="DarkRow">
+              <td class="Label" width="20%">Interface Name</td>
+              <td class="Text" width="80%">enp0s3</td>
+            </tr>
+            <tr class="DarkRow">
+              <td class="Label" width="20%">IP Address</td>
+              <td class="Text" width="80%">10.0.2.15</td>
+            </tr>
+            <tr class="DarkRow">
+              <td class="Label" width="20%">MAC Address</td>
+              <td class="Text" width="80%">08:00:27:2C:B6:69</td>
+            </tr>
+          </table>
+          <table border="1">
+            <tr class="LightRow">
+              <td class="Label" width="20%">Interface Name</td>
+              <td class="Text" width="80%">enp0s8</td>
+            </tr>
+            <tr class="LightRow">
+              <td class="Label" width="20%">IP Address</td>
+              <td class="Text" width="80%">192.168.10.10</td>
+            </tr>
+            <tr class="LightRow">
+              <td class="Label" width="20%">MAC Address</td>
+              <td class="Text" width="80%">08:00:27:2A:A8:42</td>
+            </tr>
+          </table>
+          <table border="1">
+            <tr class="DarkRow">
+              <td class="Label" width="20%">Interface Name</td>
+              <td class="Text" width="80%">lo</td>
+            </tr>
+            <tr class="DarkRow">
+              <td class="Label" width="20%">IP Address</td>
+              <td class="Text" width="80%">::1</td>
+            </tr>
+            <tr class="DarkRow">
+              <td class="Label" width="20%">MAC Address</td>
+              <td class="Text" width="80%">00:00:00:00:00:00</td>
+            </tr>
+          </table>
+          <table border="1">
+            <tr class="LightRow">
+              <td class="Label" width="20%">Interface Name</td>
+              <td class="Text" width="80%">enp0s3</td>
+            </tr>
+            <tr class="LightRow">
+              <td class="Label" width="20%">IP Address</td>
+              <td class="Text" width="80%">fd17:625c:f037:2:a00:27ff:fe2c:b669</td>
+            </tr>
+            <tr class="LightRow">
+              <td class="Label" width="20%">MAC Address</td>
+              <td class="Text" width="80%">08:00:27:2C:B6:69</td>
+            </tr>
+          </table>
+          <table border="1">
+            <tr class="DarkRow">
+              <td class="Label" width="20%">Interface Name</td>
+              <td class="Text" width="80%">enp0s3</td>
+            </tr>
+            <tr class="DarkRow">
+              <td class="Label" width="20%">IP Address</td>
+              <td class="Text" width="80%">fd17:625c:f037:2:3f7e:7f3f:e9d:2da3</td>
+            </tr>
+            <tr class="DarkRow">
+              <td class="Label" width="20%">MAC Address</td>
+              <td class="Text" width="80%">08:00:27:2C:B6:69</td>
+            </tr>
+          </table>
+          <table border="1">
+            <tr class="LightRow">
+              <td class="Label" width="20%">Interface Name</td>
+              <td class="Text" width="80%">enp0s3</td>
+            </tr>
+            <tr class="LightRow">
+              <td class="Label" width="20%">IP Address</td>
+              <td class="Text" width="80%">fe80::a00:27ff:fe2c:b669</td>
+            </tr>
+            <tr class="LightRow">
+              <td class="Label" width="20%">MAC Address</td>
+              <td class="Text" width="80%">08:00:27:2C:B6:69</td>
+            </tr>
+          </table>
+          <table border="1">
+            <tr class="DarkRow">
+              <td class="Label" width="20%">Interface Name</td>
+              <td class="Text" width="80%">enp0s8</td>
+            </tr>
+            <tr class="DarkRow">
+              <td class="Label" width="20%">IP Address</td>
+              <td class="Text" width="80%">fe80::a00:27ff:fe2a:a842</td>
+            </tr>
+            <tr class="DarkRow">
+              <td class="Label" width="20%">MAC Address</td>
+              <td class="Text" width="80%">08:00:27:2A:A8:42</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table border="1">
+      <tr class="Title">
+        <td class="TitleLabel" colspan="5">OVAL System Characteristics Generator Information</td>
+      </tr>
+      <tr class="DarkRow Center">
+        <td class="SmallLabel">Schema Version</td>
+        <td class="SmallLabel">Product Name</td>
+        <td class="SmallLabel">Product Version</td>
+        <td class="SmallLabel">Date</td>
+        <td class="SmallLabel">Time</td>
+      </tr>
+      <tr class="LightRow">
+        <td class="SmallText">5.11.1</td>
+        <td class="SmallText">cpe:/a:open-scap:oscap</td>
+        <td class="SmallText">1</td>
+        <td class="SmallText">2026-06-22</td>
+        <td class="SmallText">08:57:12</td>
+      </tr>
+    </table>
+    <table border="1">
+      <tr class="Title">
+        <td class="TitleLabel" colspan="5">OVAL Definition Results</td>
+      </tr>
+      <tr class="DarkRow">
+        <td colspan="5">
+          <table class="noborder nomargin" style="width:auto;">
+            <tr>
+              <td>
+                <table border="1">
+                  <tr class="LightRow">
+                    <td class="resultbadA ColorBox"></td>
+                    <td class="resultbadB ColorBox"></td>
+                    <td class="Text" title="Non-Compliant/Vulnerable/Unpatched">✕</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table border="1">
+                  <tr class="LightRow">
+                    <td class="resultgoodA ColorBox"></td>
+                    <td class="resultgoodB ColorBox"></td>
+                    <td class="Text" title="Compliant/Non-Vulnerable/Patched">✓</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table border="1">
+                  <tr class="LightRow">
+                    <td class="errorA ColorBox"></td>
+                    <td class="errorB ColorBox"></td>
+                    <td class="Text">Error</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table border="1">
+                  <tr class="LightRow">
+                    <td class="unknownA ColorBox"></td>
+                    <td class="unknownB ColorBox"></td>
+                    <td class="Text">Unknown</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table border="1">
+                  <tr class="LightRow">
+                    <td class="DarkRow ColorBox"></td>
+                    <td class="LightRow ColorBox"></td>
+                    <td class="Text" title="Inventory/Miscellaneous class, or Not Applicable/Not Evaluated result">Other</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr class="TitleLabel">
+        <td class="Title" align="center">ID</td>
+        <td class="Title" align="center">Result</td>
+        <td class="Title" align="center">Class</td>
+        <td class="Title" align="center">Reference ID</td>
+        <td class="Title" align="center">Title</td>
+      </tr>
+      <tr class="resultbadA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84541000000</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8454-1">USN-8454-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32741">CVE-2026-32741</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-3950">CVE-2026-3950</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41069">CVE-2026-41069</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32740">CVE-2026-32740</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32814">CVE-2026-32814</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32738">CVE-2026-32738</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32739">CVE-2026-32739</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41071">CVE-2026-41071</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32882">CVE-2026-32882</a>]</td>
+        <td class="Text">USN-8454-1 -- libheif vulnerabilities</td>
+      </tr>
+      <tr class="resultbadB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84511000000</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8451-1">USN-8451-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47162">CVE-2026-47162</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-52859">CVE-2026-52859</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-52860">CVE-2026-52860</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47167">CVE-2026-47167</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-52858">CVE-2026-52858</a>]</td>
+        <td class="Text">USN-8451-1 -- Vim vulnerabilities</td>
+      </tr>
+      <tr class="otherA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:100</td>
+        <td class="Text" align="center">true</td>
+        <td class="Text" align="center">inventory</td>
+        <td class="Text" align="center"></td>
+        <td class="Text">Check that Ubuntu 26.04 LTS (resolute) is installed.</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84531000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8453-1">USN-8453-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-45190">CVE-2026-45190</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-45191">CVE-2026-45191</a>]</td>
+        <td class="Text">USN-8453-1 -- Net::CIDR::Lite vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84501000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8450-1">USN-8450-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41293">CVE-2026-41293</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42498">CVE-2026-42498</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41284">CVE-2026-41284</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43515">CVE-2026-43515</a>]</td>
+        <td class="Text">USN-8450-1 -- Tomcat vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84491000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8449-1">USN-8449-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-10846">CVE-2026-10846</a>]</td>
+        <td class="Text">USN-8449-1 -- ldns vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84471000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8447-1">USN-8447-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-39833">CVE-2026-39833</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-39830">CVE-2026-39830</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-39834">CVE-2026-39834</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-46595">CVE-2026-46595</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-39832">CVE-2026-39832</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42508">CVE-2026-42508</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-39831">CVE-2026-39831</a>]</td>
+        <td class="Text">USN-8447-1 -- Go Cryptography vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84461000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8446-1">USN-8446-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-53701">CVE-2026-53701</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-53702">CVE-2026-53702</a>]</td>
+        <td class="Text">USN-8446-1 -- GStreamer Bad Plugins vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84451000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8445-1">USN-8445-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-11527">CVE-2026-11527</a>]</td>
+        <td class="Text">USN-8445-1 -- Config-IniFiles vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84441000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8444-1">USN-8444-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-50593">CVE-2026-50593</a>]</td>
+        <td class="Text">USN-8444-1 -- Graphite vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84421000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8442-1">USN-8442-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33633">CVE-2026-33633</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33642">CVE-2026-33642</a>]</td>
+        <td class="Text">USN-8442-1 -- kitty vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84381000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8438-1">USN-8438-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43903">CVE-2026-43903</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43904">CVE-2026-43904</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43908">CVE-2026-43908</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43907">CVE-2026-43907</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43909">CVE-2026-43909</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43906">CVE-2026-43906</a>]</td>
+        <td class="Text">USN-8438-1 -- OpenImageIO vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84371000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8437-1">USN-8437-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44236">CVE-2026-44236</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2023-35789">CVE-2023-35789</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44235">CVE-2026-44235</a>]</td>
+        <td class="Text">USN-8437-1 -- rabbitmq-c vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84361000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8436-1">USN-8436-1</a>]</td>
+        <td class="Text">USN-8436-1 -- ca-certificates update</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84351000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8435-1">USN-8435-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-50012">CVE-2026-50012</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47729">CVE-2026-47729</a>]</td>
+        <td class="Text">USN-8435-1 -- Squid vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84341000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8434-1">USN-8434-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-46448">CVE-2026-46448</a>]</td>
+        <td class="Text">USN-8434-1 -- Nova vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84331000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8433-1">USN-8433-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33551">CVE-2026-33551</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42998">CVE-2026-42998</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40683">CVE-2026-40683</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43001">CVE-2026-43001</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43000">CVE-2026-43000</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42999">CVE-2026-42999</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44394">CVE-2026-44394</a>]</td>
+        <td class="Text">USN-8433-1 -- OpenStack Keystone vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84321000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8432-1">USN-8432-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-45700">CVE-2026-45700</a>]</td>
+        <td class="Text">USN-8432-1 -- FreeRDP vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84301000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8430-1">USN-8430-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-27141">CVE-2026-27141</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33814">CVE-2026-33814</a>]</td>
+        <td class="Text">USN-8430-1 -- ADSys vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84291000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8429-1">USN-8429-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-48689">CVE-2026-48689</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-48691">CVE-2026-48691</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-48687">CVE-2026-48687</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-48686">CVE-2026-48686</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-48694">CVE-2026-48694</a>]</td>
+        <td class="Text">USN-8429-1 -- FastNetMon vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84281000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8428-1">USN-8428-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-11623">CVE-2026-11623</a>]</td>
+        <td class="Text">USN-8428-1 -- tmux vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84251000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8425-1">USN-8425-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-8711">CVE-2026-8711</a>]</td>
+        <td class="Text">USN-8425-1 -- njs vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84241000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8424-1">USN-8424-1</a>]</td>
+        <td class="Text">USN-8424-1 -- Ubuntu Kylin Software Center vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84231000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8423-1">USN-8423-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2020-22284">CVE-2020-22284</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2020-8597">CVE-2020-8597</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-8836">CVE-2026-8836</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2020-22283">CVE-2020-22283</a>]</td>
+        <td class="Text">USN-8423-1 -- lwIP vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84221000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8422-1">USN-8422-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41283">CVE-2026-41283</a>]</td>
+        <td class="Text">USN-8422-1 -- Mistral vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84211000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8421-1">USN-8421-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44917">CVE-2026-44917</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-48681">CVE-2026-48681</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-46447">CVE-2026-46447</a>]</td>
+        <td class="Text">USN-8421-1 -- Ironic vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84201000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8420-1">USN-8420-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-45491">CVE-2026-45491</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-45591">CVE-2026-45591</a>]</td>
+        <td class="Text">USN-8420-1 -- .NET vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84191000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8419-1">USN-8419-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-8450">CVE-2026-8450</a>]</td>
+        <td class="Text">USN-8419-1 -- HTTP-Daemon vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84181000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8418-1">USN-8418-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47372">CVE-2026-47372</a>]</td>
+        <td class="Text">USN-8418-1 -- Crypt-SaltedHash vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84171000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8417-1">USN-8417-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43512">CVE-2026-43512</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42498">CVE-2026-42498</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41293">CVE-2026-41293</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43515">CVE-2026-43515</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43513">CVE-2026-43513</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41284">CVE-2026-41284</a>]</td>
+        <td class="Text">USN-8417-1 -- Tomcat vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84151000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8415-1">USN-8415-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43961">CVE-2026-43961</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-46483">CVE-2026-46483</a>]</td>
+        <td class="Text">USN-8415-1 -- Vim vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84141000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8414-1">USN-8414-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42770">CVE-2026-42770</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-45447">CVE-2026-45447</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34182">CVE-2026-34182</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42769">CVE-2026-42769</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34181">CVE-2026-34181</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34183">CVE-2026-34183</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42766">CVE-2026-42766</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34180">CVE-2026-34180</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-7383">CVE-2026-7383</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-9076">CVE-2026-9076</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42768">CVE-2026-42768</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42764">CVE-2026-42764</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-45445">CVE-2026-45445</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-45446">CVE-2026-45446</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42767">CVE-2026-42767</a>]</td>
+        <td class="Text">USN-8414-1 -- OpenSSL vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84131000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8413-1">USN-8413-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40213">CVE-2026-40213</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40214">CVE-2026-40214</a>]</td>
+        <td class="Text">USN-8413-1 -- Cyborg vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84111000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8411-1">USN-8411-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2020-8203">CVE-2020-8203</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2020-28500">CVE-2020-28500</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2021-23337">CVE-2021-23337</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-13465">CVE-2025-13465</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-2950">CVE-2026-2950</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-4800">CVE-2026-4800</a>]</td>
+        <td class="Text">USN-8411-1 -- Lodash vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84101000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8410-1">USN-8410-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-9277">CVE-2026-9277</a>]</td>
+        <td class="Text">USN-8410-1 -- shell-quote vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84081000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8408-1">USN-8408-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-24425">CVE-2026-24425</a>]</td>
+        <td class="Text">USN-8408-1 -- Twig vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84071000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8407-1">USN-8407-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47895">CVE-2026-47895</a>]</td>
+        <td class="Text">USN-8407-1 -- strongSwan vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84061000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8406-1">USN-8406-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40199">CVE-2026-40199</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2021-47154">CVE-2021-47154</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40198">CVE-2026-40198</a>]</td>
+        <td class="Text">USN-8406-1 -- Net::CIDR::Lite vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84052000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8405-2">USN-8405-2</a>]</td>
+        <td class="Text">USN-8405-2 -- CUPS regression</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84051000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8405-1">USN-8405-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-39316">CVE-2026-39316</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-27447">CVE-2026-27447</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34979">CVE-2026-34979</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34990">CVE-2026-34990</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34980">CVE-2026-34980</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-39314">CVE-2026-39314</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41079">CVE-2026-41079</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34978">CVE-2026-34978</a>]</td>
+        <td class="Text">USN-8405-1 -- CUPS vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84041000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8404-1">USN-8404-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-38978">CVE-2026-38978</a>]</td>
+        <td class="Text">USN-8404-1 -- Transmission vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84011000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8401-1">USN-8401-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42584">CVE-2026-42584</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42579">CVE-2026-42579</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42585">CVE-2026-42585</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42581">CVE-2026-42581</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42578">CVE-2026-42578</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42586">CVE-2026-42586</a>]</td>
+        <td class="Text">USN-8401-1 -- Netty vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:84001000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8400-1">USN-8400-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-10118">CVE-2026-10118</a>]</td>
+        <td class="Text">USN-8400-1 -- poppler vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83991000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8399-1">USN-8399-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42309">CVE-2026-42309</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42308">CVE-2026-42308</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42311">CVE-2026-42311</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42310">CVE-2026-42310</a>]</td>
+        <td class="Text">USN-8399-1 -- Pillow vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83983000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8398-3">USN-8398-3</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-49975">CVE-2026-49975</a>]</td>
+        <td class="Text">USN-8398-3 -- nginx vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83982000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8398-2">USN-8398-2</a>]</td>
+        <td class="Text">USN-8398-2 -- nginx regression</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83981000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8398-1">USN-8398-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-49975">CVE-2026-49975</a>]</td>
+        <td class="Text">USN-8398-1 -- nginx vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83971000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8397-1">USN-8397-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-70103">CVE-2025-70103</a>]</td>
+        <td class="Text">USN-8397-1 -- libjxl vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83951000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8395-1">USN-8395-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44051">CVE-2026-44051</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44064">CVE-2026-44064</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44050">CVE-2026-44050</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44055">CVE-2026-44055</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44052">CVE-2026-44052</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44049">CVE-2026-44049</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44048">CVE-2026-44048</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44062">CVE-2026-44062</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44060">CVE-2026-44060</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44047">CVE-2026-44047</a>]</td>
+        <td class="Text">USN-8395-1 -- Netatalk vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83941000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8394-1">USN-8394-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41493">CVE-2026-41493</a>]</td>
+        <td class="Text">USN-8394-1 -- YARD vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83871000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8387-1">USN-8387-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-28372">CVE-2026-28372</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32772">CVE-2026-32772</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32746">CVE-2026-32746</a>]</td>
+        <td class="Text">USN-8387-1 -- Inetutils vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83861000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8386-1">USN-8386-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6842">CVE-2026-6842</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6843">CVE-2026-6843</a>]</td>
+        <td class="Text">USN-8386-1 -- Nano vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83851000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8385-1">USN-8385-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2019-10648">CVE-2019-10648</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-14306">CVE-2025-14306</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-14307">CVE-2025-14307</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-14308">CVE-2025-14308</a>]</td>
+        <td class="Text">USN-8385-1 -- Robocode vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83841000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8384-1">USN-8384-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-49975">CVE-2026-49975</a>]</td>
+        <td class="Text">USN-8384-1 -- Apache HTTP Server vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83801000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8380-1">USN-8380-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42304">CVE-2026-42304</a>]</td>
+        <td class="Text">USN-8380-1 -- Twisted vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83791000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8379-1">USN-8379-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44432">CVE-2026-44432</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44431">CVE-2026-44431</a>]</td>
+        <td class="Text">USN-8379-1 -- urllib3 vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83781000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8378-1">USN-8378-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-8368">CVE-2026-8368</a>]</td>
+        <td class="Text">USN-8378-1 -- libwww-perl vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83771000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8377-1">USN-8377-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-5090">CVE-2026-5090</a>]</td>
+        <td class="Text">USN-8377-1 -- Template-Toolkit vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83761000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8376-1">USN-8376-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-28532">CVE-2026-28532</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-37457">CVE-2026-37457</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-37459">CVE-2026-37459</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-37458">CVE-2026-37458</a>]</td>
+        <td class="Text">USN-8376-1 -- FRR vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83701000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8370-1">USN-8370-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43284">CVE-2026-43284</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43494">CVE-2026-43494</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43500">CVE-2026-43500</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43503">CVE-2026-43503</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-45998">CVE-2026-45998</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-46000">CVE-2026-46000</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-46300">CVE-2026-46300</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-46333">CVE-2026-46333</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47326">CVE-2026-47326</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47327">CVE-2026-47327</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47328">CVE-2026-47328</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47329">CVE-2026-47329</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47330">CVE-2026-47330</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47332">CVE-2026-47332</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47333">CVE-2026-47333</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47334">CVE-2026-47334</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47337">CVE-2026-47337</a>]</td>
+        <td class="Text">USN-8370-1 -- Linux kernel vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83661000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8366-1">USN-8366-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40959">CVE-2026-40959</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40960">CVE-2026-40960</a>]</td>
+        <td class="Text">USN-8366-1 -- Luanti vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83651000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8365-1">USN-8365-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42006">CVE-2026-42006</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33603">CVE-2026-33603</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-27851">CVE-2026-27851</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40016">CVE-2026-40016</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40020">CVE-2026-40020</a>]</td>
+        <td class="Text">USN-8365-1 -- Dovecot vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83631000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8363-1">USN-8363-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22009">CVE-2026-22009</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34317">CVE-2026-34317</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35239">CVE-2026-35239</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35236">CVE-2026-35236</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22001">CVE-2026-22001</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34308">CVE-2026-34308</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34271">CVE-2026-34271</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-21998">CVE-2026-21998</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34304">CVE-2026-34304</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34303">CVE-2026-34303</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35240">CVE-2026-35240</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22002">CVE-2026-22002</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34278">CVE-2026-34278</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34319">CVE-2026-34319</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22015">CVE-2026-22015</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34293">CVE-2026-34293</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22017">CVE-2026-22017</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34276">CVE-2026-34276</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35237">CVE-2026-35237</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22004">CVE-2026-22004</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35238">CVE-2026-35238</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34318">CVE-2026-34318</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22005">CVE-2026-22005</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34267">CVE-2026-34267</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34270">CVE-2026-34270</a>]</td>
+        <td class="Text">USN-8363-1 -- MySQL vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83601000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8360-1">USN-8360-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-52936">CVE-2025-52936</a>]</td>
+        <td class="Text">USN-8360-1 -- sslh vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83581000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8358-1">USN-8358-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41054">CVE-2026-41054</a>]</td>
+        <td class="Text">USN-8358-1 -- haveged vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83561000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8356-1">USN-8356-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-48829">CVE-2026-48829</a>]</td>
+        <td class="Text">USN-8356-1 -- GNU SASL vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83551000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8355-1">USN-8355-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6245">CVE-2026-6245</a>]</td>
+        <td class="Text">USN-8355-1 -- SSSD vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83541000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8354-1">USN-8354-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-9256">CVE-2026-9256</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42946">CVE-2026-42946</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40701">CVE-2026-40701</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40460">CVE-2026-40460</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42934">CVE-2026-42934</a>]</td>
+        <td class="Text">USN-8354-1 -- nginx vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83531000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8353-1">USN-8353-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-48840">CVE-2026-48840</a>]</td>
+        <td class="Text">USN-8353-1 -- Exim vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83521000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8352-1">USN-8352-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-4430">CVE-2026-4430</a>]</td>
+        <td class="Text">USN-8352-1 -- LibreOffice vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83492000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8349-2">USN-8349-2</a>]</td>
+        <td class="Text">USN-8349-2 -- rsync regression</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83481000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8348-1">USN-8348-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-7734">CVE-2026-7734</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-37461">CVE-2026-37461</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-7736">CVE-2026-7736</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-7735">CVE-2026-7735</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-7737">CVE-2026-7737</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41643">CVE-2026-41643</a>]</td>
+        <td class="Text">USN-8348-1 -- GoBGP vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83471000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8347-1">USN-8347-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-9900">CVE-2025-9900</a>]</td>
+        <td class="Text">USN-8347-1 -- QT WebEngine vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83443000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8344-3">USN-8344-3</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-66471">CVE-2025-66471</a>]</td>
+        <td class="Text">USN-8344-3 -- pip vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83442000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8344-2">USN-8344-2</a>]</td>
+        <td class="Text">USN-8344-2 -- pip regression</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83441000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8344-1">USN-8344-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2024-35195">CVE-2024-35195</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-66418">CVE-2025-66418</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-66471">CVE-2025-66471</a>]</td>
+        <td class="Text">USN-8344-1 -- pip vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83431000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8343-1">USN-8343-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-28356">CVE-2026-28356</a>]</td>
+        <td class="Text">USN-8343-1 -- multipart vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83411000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8341-1">USN-8341-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34268">CVE-2026-34268</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22021">CVE-2026-22021</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22008">CVE-2026-22008</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22007">CVE-2026-22007</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22013">CVE-2026-22013</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34282">CVE-2026-34282</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-23865">CVE-2026-23865</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22018">CVE-2026-22018</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22016">CVE-2026-22016</a>]</td>
+        <td class="Text">USN-8341-1 -- OpenJDK 26 vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83391000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8339-1">USN-8339-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22013">CVE-2026-22013</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-23865">CVE-2026-23865</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22007">CVE-2026-22007</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22021">CVE-2026-22021</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22016">CVE-2026-22016</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34282">CVE-2026-34282</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22018">CVE-2026-22018</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22008">CVE-2026-22008</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34268">CVE-2026-34268</a>]</td>
+        <td class="Text">USN-8339-1 -- OpenJDK 25 vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83361000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8336-1">USN-8336-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-7262">CVE-2026-7262</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-7568">CVE-2026-7568</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-14179">CVE-2025-14179</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6735">CVE-2026-6735</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6104">CVE-2026-6104</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6722">CVE-2026-6722</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-7259">CVE-2026-7259</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-7261">CVE-2026-7261</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-7263">CVE-2026-7263</a>]</td>
+        <td class="Text">USN-8336-1 -- PHP vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83341000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8334-1">USN-8334-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34268">CVE-2026-34268</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22007">CVE-2026-22007</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22021">CVE-2026-22021</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34282">CVE-2026-34282</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22018">CVE-2026-22018</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22008">CVE-2026-22008</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22016">CVE-2026-22016</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-23865">CVE-2026-23865</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22013">CVE-2026-22013</a>]</td>
+        <td class="Text">USN-8334-1 -- CRaC JDK 25 vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83331000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8333-1">USN-8333-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34268">CVE-2026-34268</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22021">CVE-2026-22021</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22016">CVE-2026-22016</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22013">CVE-2026-22013</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-23865">CVE-2026-23865</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22018">CVE-2026-22018</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34282">CVE-2026-34282</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22007">CVE-2026-22007</a>]</td>
+        <td class="Text">USN-8333-1 -- CRaC JDK 21 vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83321000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8332-1">USN-8332-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22013">CVE-2026-22013</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22007">CVE-2026-22007</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34268">CVE-2026-34268</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22018">CVE-2026-22018</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34282">CVE-2026-34282</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22021">CVE-2026-22021</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22016">CVE-2026-22016</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-23865">CVE-2026-23865</a>]</td>
+        <td class="Text">USN-8332-1 -- CRaC JDK 17 vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83311000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8331-1">USN-8331-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22016">CVE-2026-22016</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22021">CVE-2026-22021</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22013">CVE-2026-22013</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22018">CVE-2026-22018</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34282">CVE-2026-34282</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34268">CVE-2026-34268</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-23865">CVE-2026-23865</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22007">CVE-2026-22007</a>]</td>
+        <td class="Text">USN-8331-1 -- OpenJDK 11 vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83301000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8330-1">USN-8330-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22018">CVE-2026-22018</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34268">CVE-2026-34268</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22007">CVE-2026-22007</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22021">CVE-2026-22021</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-23865">CVE-2026-23865</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22013">CVE-2026-22013</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22016">CVE-2026-22016</a>]</td>
+        <td class="Text">USN-8330-1 -- OpenJDK 8 vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83281000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8328-1">USN-8328-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34282">CVE-2026-34282</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22021">CVE-2026-22021</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34268">CVE-2026-34268</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22007">CVE-2026-22007</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22013">CVE-2026-22013</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22016">CVE-2026-22016</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22018">CVE-2026-22018</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-23865">CVE-2026-23865</a>]</td>
+        <td class="Text">USN-8328-1 -- OpenJDK 21 vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83271000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8327-1">USN-8327-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22021">CVE-2026-22021</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34268">CVE-2026-34268</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22016">CVE-2026-22016</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22007">CVE-2026-22007</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22018">CVE-2026-22018</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-22013">CVE-2026-22013</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34282">CVE-2026-34282</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-23865">CVE-2026-23865</a>]</td>
+        <td class="Text">USN-8327-1 -- OpenJDK 17 vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83231000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8323-1">USN-8323-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44742">CVE-2026-44742</a>]</td>
+        <td class="Text">USN-8323-1 -- Postorius vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83211000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8321-1">USN-8321-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-46529">CVE-2026-46529</a>]</td>
+        <td class="Text">USN-8321-1 -- Papers vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83201000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8320-1">USN-8320-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47784">CVE-2026-47784</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-47783">CVE-2026-47783</a>]</td>
+        <td class="Text">USN-8320-1 -- Memcached vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83191000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8319-1">USN-8319-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41989">CVE-2026-41989</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41990">CVE-2026-41990</a>]</td>
+        <td class="Text">USN-8319-1 -- Libgcrypt vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83181000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8318-1">USN-8318-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42046">CVE-2026-42046</a>]</td>
+        <td class="Text">USN-8318-1 -- libcaca vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83091000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8309-1">USN-8309-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-7598">CVE-2026-7598</a>]</td>
+        <td class="Text">USN-8309-1 -- libssh2 vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83081000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8308-1">USN-8308-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6507">CVE-2026-6507</a>]</td>
+        <td class="Text">USN-8308-1 -- Dnsmasq vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83061000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8306-1">USN-8306-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-4480">CVE-2026-4480</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-1933">CVE-2026-1933</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-3012">CVE-2026-3012</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-4408">CVE-2026-4408</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-2340">CVE-2026-2340</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-3238">CVE-2026-3238</a>]</td>
+        <td class="Text">USN-8306-1 -- Samba vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83041000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8304-1">USN-8304-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44656">CVE-2026-44656</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-45130">CVE-2026-45130</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42307">CVE-2026-42307</a>]</td>
+        <td class="Text">USN-8304-1 -- Vim vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83031000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8303-1">USN-8303-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2023-41040">CVE-2023-41040</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42215">CVE-2026-42215</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42284">CVE-2026-42284</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44243">CVE-2026-44243</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44244">CVE-2026-44244</a>]</td>
+        <td class="Text">USN-8303-1 -- GitPython vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83021000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8302-1">USN-8302-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-0846">CVE-2026-0846</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-0848">CVE-2026-0848</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33230">CVE-2026-33230</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33231">CVE-2026-33231</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-0847">CVE-2026-0847</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33236">CVE-2026-33236</a>]</td>
+        <td class="Text">USN-8302-1 -- NLTK vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83011000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8301-1">USN-8301-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32640">CVE-2026-32640</a>]</td>
+        <td class="Text">USN-8301-1 -- SimpleEval vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:83001000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8300-1">USN-8300-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40170">CVE-2026-40170</a>]</td>
+        <td class="Text">USN-8300-1 -- ngtcp2 vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82991000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8299-1">USN-8299-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41179">CVE-2026-41179</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41176">CVE-2026-41176</a>]</td>
+        <td class="Text">USN-8299-1 -- Rclone vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82981000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8298-1">USN-8298-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42899">CVE-2026-42899</a>]</td>
+        <td class="Text">USN-8298-1 -- .NET vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82951000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8295-1">USN-8295-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-46529">CVE-2026-46529</a>]</td>
+        <td class="Text">USN-8295-1 -- Evince vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82941000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8294-1">USN-8294-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6638">CVE-2026-6638</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6476">CVE-2026-6476</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6477">CVE-2026-6477</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6479">CVE-2026-6479</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6475">CVE-2026-6475</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6474">CVE-2026-6474</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6478">CVE-2026-6478</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6472">CVE-2026-6472</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6473">CVE-2026-6473</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6637">CVE-2026-6637</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6575">CVE-2026-6575</a>]</td>
+        <td class="Text">USN-8294-1 -- PostgreSQL vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82931000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8293-1">USN-8293-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-3592">CVE-2026-3592</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-5947">CVE-2026-5947</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-5946">CVE-2026-5946</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-5950">CVE-2026-5950</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-3593">CVE-2026-3593</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-3039">CVE-2026-3039</a>]</td>
+        <td class="Text">USN-8293-1 -- Bind vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82921000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8292-1">USN-8292-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-4424">CVE-2026-4424</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-4426">CVE-2026-4426</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-5121">CVE-2026-5121</a>]</td>
+        <td class="Text">USN-8292-1 -- libarchive vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82881000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8288-1">USN-8288-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41163">CVE-2026-41163</a>]</td>
+        <td class="Text">USN-8288-1 -- Bubblewrap vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82861000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8286-1">USN-8286-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35058">CVE-2026-35058</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40215">CVE-2026-40215</a>]</td>
+        <td class="Text">USN-8286-1 -- OpenVPN vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82841000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8284-1">USN-8284-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-3832">CVE-2026-3832</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-5260">CVE-2026-5260</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33846">CVE-2026-33846</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-3833">CVE-2026-3833</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42012">CVE-2026-42012</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42014">CVE-2026-42014</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-5419">CVE-2026-5419</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33845">CVE-2026-33845</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42015">CVE-2026-42015</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42009">CVE-2026-42009</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42010">CVE-2026-42010</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42013">CVE-2026-42013</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42011">CVE-2026-42011</a>]</td>
+        <td class="Text">USN-8284-1 -- GnuTLS vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82831000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8283-1">USN-8283-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43619">CVE-2026-43619</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43617">CVE-2026-43617</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43620">CVE-2026-43620</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-10158">CVE-2025-10158</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-29518">CVE-2026-29518</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43618">CVE-2026-43618</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41035">CVE-2026-41035</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-45232">CVE-2026-45232</a>]</td>
+        <td class="Text">USN-8283-1 -- rsync vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82821000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8282-1">USN-8282-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40622">CVE-2026-40622</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33278">CVE-2026-33278</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42923">CVE-2026-42923</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44390">CVE-2026-44390</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42944">CVE-2026-42944</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41292">CVE-2026-41292</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42959">CVE-2026-42959</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42960">CVE-2026-42960</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42534">CVE-2026-42534</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32792">CVE-2026-32792</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-44608">CVE-2026-44608</a>]</td>
+        <td class="Text">USN-8282-1 -- Unbound vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82711000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8271-1">USN-8271-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42945">CVE-2026-42945</a>]</td>
+        <td class="Text">USN-8271-1 -- nginx vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82701000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8270-1">USN-8270-1</a>]</td>
+        <td class="Text">USN-8270-1 -- Exim vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82691000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8269-1">USN-8269-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-24401">CVE-2026-24401</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34933">CVE-2026-34933</a>]</td>
+        <td class="Text">USN-8269-1 -- Avahi vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82681000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8268-1">USN-8268-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-4890">CVE-2026-4890</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-4891">CVE-2026-4891</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-2291">CVE-2026-2291</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-4892">CVE-2026-4892</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-5172">CVE-2026-5172</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-4893">CVE-2026-4893</a>]</td>
+        <td class="Text">USN-8268-1 -- Dnsmasq vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82591000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8259-1">USN-8259-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-27622">CVE-2026-27622</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34380">CVE-2026-34380</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34588">CVE-2026-34588</a>]</td>
+        <td class="Text">USN-8259-1 -- OpenEXR vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82561000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8256-1">USN-8256-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41082">CVE-2026-41082</a>]</td>
+        <td class="Text">USN-8256-1 -- opam vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82531000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8253-1">USN-8253-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-43964">CVE-2026-43964</a>]</td>
+        <td class="Text">USN-8253-1 -- Postfix vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82521000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8252-1">USN-8252-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6192">CVE-2026-6192</a>]</td>
+        <td class="Text">USN-8252-1 -- OpenJPEG vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82501000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8250-1">USN-8250-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-42798">CVE-2026-42798</a>]</td>
+        <td class="Text">USN-8250-1 -- Little CMS vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82461000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8246-1">USN-8246-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41411">CVE-2026-41411</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-39881">CVE-2026-39881</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35177">CVE-2026-35177</a>]</td>
+        <td class="Text">USN-8246-1 -- Vim vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82401000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8240-1">USN-8240-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2022-25236">CVE-2022-25236</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2022-25235">CVE-2022-25235</a>]</td>
+        <td class="Text">USN-8240-1 -- Swish-e vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82391000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8239-1">USN-8239-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33007">CVE-2026-33007</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34059">CVE-2026-34059</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-23918">CVE-2026-23918</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33523">CVE-2026-33523</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-24072">CVE-2026-24072</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-34032">CVE-2026-34032</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-28780">CVE-2026-28780</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-29168">CVE-2026-29168</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-29169">CVE-2026-29169</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33006">CVE-2026-33006</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33857">CVE-2026-33857</a>]</td>
+        <td class="Text">USN-8239-1 -- Apache HTTP Server vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82381000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8238-1">USN-8238-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40489">CVE-2026-40489</a>]</td>
+        <td class="Text">USN-8238-1 -- EditorConfig vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82371000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8237-1">USN-8237-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-28871">CVE-2026-28871</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-20664">CVE-2026-20664</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-20608">CVE-2026-20608</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-20691">CVE-2026-20691</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-20636">CVE-2026-20636</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-28859">CVE-2026-28859</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-20665">CVE-2026-20665</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-46299">CVE-2025-46299</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-20635">CVE-2026-20635</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-43213">CVE-2025-43213</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-20652">CVE-2026-20652</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-43457">CVE-2025-43457</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-20643">CVE-2026-20643</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-43511">CVE-2025-43511</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-43214">CVE-2025-43214</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-28857">CVE-2026-28857</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-20644">CVE-2026-20644</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-28861">CVE-2026-28861</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-20676">CVE-2026-20676</a>]</td>
+        <td class="Text">USN-8237-1 -- WebKitGTK vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82341000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8234-1">USN-8234-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41205">CVE-2026-41205</a>]</td>
+        <td class="Text">USN-8234-1 -- Mako vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82332000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8233-2">USN-8233-2</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-27135">CVE-2026-27135</a>]</td>
+        <td class="Text">USN-8233-2 -- nghttp2 vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82321000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8232-1">USN-8232-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6907">CVE-2026-6907</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-5766">CVE-2026-5766</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35192">CVE-2026-35192</a>]</td>
+        <td class="Text">USN-8232-1 -- Django vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82311000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8231-1">USN-8231-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33154">CVE-2026-33154</a>]</td>
+        <td class="Text">USN-8231-1 -- Dynaconf vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82301000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8230-1">USN-8230-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33748">CVE-2026-33748</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33747">CVE-2026-33747</a>]</td>
+        <td class="Text">USN-8230-1 -- Docker vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82291000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8229-1">USN-8229-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-5958">CVE-2026-5958</a>]</td>
+        <td class="Text">USN-8229-1 -- sed vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82281000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8228-1">USN-8228-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40685">CVE-2026-40685</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40687">CVE-2026-40687</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40686">CVE-2026-40686</a>]</td>
+        <td class="Text">USN-8228-1 -- Exim vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82271000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8227-1">USN-8227-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6276">CVE-2026-6276</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-5773">CVE-2026-5773</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-7168">CVE-2026-7168</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-5545">CVE-2026-5545</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6253">CVE-2026-6253</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6429">CVE-2026-6429</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-4873">CVE-2026-4873</a>]</td>
+        <td class="Text">USN-8227-1 -- curl vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82251000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8225-1">USN-8225-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-68480">CVE-2025-68480</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2018-17175">CVE-2018-17175</a>]</td>
+        <td class="Text">USN-8225-1 -- Python marshmallow vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82221000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8222-1">USN-8222-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35388">CVE-2026-35388</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35385">CVE-2026-35385</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35387">CVE-2026-35387</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35414">CVE-2026-35414</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35386">CVE-2026-35386</a>]</td>
+        <td class="Text">USN-8222-1 -- OpenSSH vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82191000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8219-1">USN-8219-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32875">CVE-2026-32875</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32874">CVE-2026-32874</a>]</td>
+        <td class="Text">USN-8219-1 -- UltraJSON vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82161000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8216-1">USN-8216-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-26171">CVE-2026-26171</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33116">CVE-2026-33116</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32178">CVE-2026-32178</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32203">CVE-2026-32203</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40372">CVE-2026-40372</a>]</td>
+        <td class="Text">USN-8216-1 -- .NET vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82141000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8214-1">USN-8214-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2025-14009">CVE-2025-14009</a>]</td>
+        <td class="Text">USN-8214-1 -- NLTK vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82121000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8212-1">USN-8212-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-6970">CVE-2026-6970</a>]</td>
+        <td class="Text">USN-8212-1 -- authd vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82111000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8211-1">USN-8211-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40192">CVE-2026-40192</a>]</td>
+        <td class="Text">USN-8211-1 -- Pillow vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82091000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8209-1">USN-8209-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-41254">CVE-2026-41254</a>]</td>
+        <td class="Text">USN-8209-1 -- Little CMS vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82081000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8208-1">USN-8208-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33555">CVE-2026-33555</a>]</td>
+        <td class="Text">USN-8208-1 -- HAProxy vulnerability</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82071000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8207-1">USN-8207-1</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-20031">CVE-2026-20031</a>]</td>
+        <td class="Text">USN-8207-1 -- ClamAV vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:82022000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8202-2">USN-8202-2</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-39979">CVE-2026-39979</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40164">CVE-2026-40164</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-39956">CVE-2026-39956</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-32316">CVE-2026-32316</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33947">CVE-2026-33947</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-33948">CVE-2026-33948</a>]</td>
+        <td class="Text">USN-8202-2 -- jq vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:81982000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8198-2">USN-8198-2</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-31958">CVE-2026-31958</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35536">CVE-2026-35536</a>]</td>
+        <td class="Text">USN-8198-2 -- Tornado vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:81962000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8196-2">USN-8196-2</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35334">CVE-2026-35334</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35328">CVE-2026-35328</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35333">CVE-2026-35333</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35332">CVE-2026-35332</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35330">CVE-2026-35330</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35329">CVE-2026-35329</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-35331">CVE-2026-35331</a>]</td>
+        <td class="Text">USN-8196-2 -- strongSwan vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:81952000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8195-2">USN-8195-2</a>]</td>
+        <td class="Text">USN-8195-2 -- PackageKit vulnerability</td>
+      </tr>
+      <tr class="resultgoodA">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:81922000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8192-2">USN-8192-2</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-40706">CVE-2026-40706</a>]</td>
+        <td class="Text">USN-8192-2 -- NTFS-3G vulnerabilities</td>
+      </tr>
+      <tr class="resultgoodB">
+        <td class="Text" align="center">oval:com.ubuntu.resolute:def:81902000000</td>
+        <td class="Text" align="center">false</td>
+        <td class="Text" align="center">patch</td>
+        <td class="Text" align="center">[<a class="Hover" target="_blank" href="https://ubuntu.com/security/notices/USN-8190-2">USN-8190-2</a>], [<a class="Hover" target="_blank" href="https://ubuntu.com/security/CVE-2026-39324">CVE-2026-39324</a>]</td>
+        <td class="Text">USN-8190-2 -- Rack::Session vulnerability</td>
+      </tr>
+    </table>
+  </body>
+</html>
