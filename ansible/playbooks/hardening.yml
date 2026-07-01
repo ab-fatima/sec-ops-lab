@@ -3,7 +3,7 @@
 #  SEC-OPS LAB — Playbook de Hardening Ubuntu 26.04
 #  Référentiel : CIS Benchmark Ubuntu Level 1 Server
 #  Auteur      : ABDALLI Fatima — ENSIASD / CHU Mohammed VI
-#  Date        : Juin 2025
+#  Date        : Juin 2026
 # =============================================================
 
 - name: "Hardening Ubuntu — CIS Benchmark Level 1 Server"
@@ -122,19 +122,7 @@
         state: present
         reload: yes
 
-    - name: "[CIS 3.2.2] Désactiver l'acceptation des ICMP Redirects"
-      ansible.posix.sysctl:
-        name: net.ipv4.conf.all.accept_redirects
-        value: '0'
-        state: present
-        reload: yes
-
-    - name: "[CIS 3.3.1] Désactiver le Source Routing"
-      ansible.posix.sysctl:
-        name: net.ipv4.conf.all.accept_source_route
-        value: '0'
-        state: present
-        reload: yes
+   
 
   # ══════════════════════════════════════════════════════
   # HANDLERS
